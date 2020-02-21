@@ -2192,7 +2192,8 @@ int fluid_player_seek(fluid_player_t *player, int ticks)
 
     if(fluid_player_get_status(player) == FLUID_PLAYER_PLAYING)
     {
-        if(fluid_atomic_int_compare_and_exchange(&player->seek_ticks, -1, ticks))
+        int d = -1;
+        if(fluid_atomic_int_compare_and_exchange(&player->seek_ticks, &d, ticks))
         {
             // new seek position has been set, as no previous seek was in progress
             return FLUID_OK;
