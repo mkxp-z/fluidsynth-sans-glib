@@ -71,9 +71,9 @@ typedef double fluid_real_t;
 
 
 /** Atomic types  */
-typedef int fluid_atomic_int_t;
-typedef unsigned int fluid_atomic_uint_t;
-typedef float fluid_atomic_float_t;
+typedef _Atomic int fluid_atomic_int_t;
+typedef _Atomic unsigned int fluid_atomic_uint_t;
+typedef _Atomic float fluid_atomic_float_t;
 
 
 /***************************************************************

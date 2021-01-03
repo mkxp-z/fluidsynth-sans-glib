@@ -148,7 +148,7 @@ static void fluid_synth_set_basic_channel_LOCAL(fluid_synth_t *synth, int basicc
 
 /* has the synth module been initialized? */
 /* fluid_atomic_int_t may be anything, so init with {0} to catch most cases */
-static fluid_atomic_int_t fluid_synth_initialized = {0};
+static fluid_atomic_int_t fluid_synth_initialized = 0;
 
 /* default modulators
  * SF2.01 page 52 ff:
