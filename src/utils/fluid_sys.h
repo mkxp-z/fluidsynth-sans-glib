@@ -403,16 +403,7 @@ fluid_ostream_t fluid_socket_get_ostream(fluid_socket_t sock);
 
 /* File access */
 #define fluid_stat(_filename, _statbuf)   stat((_filename), (_statbuf))
-#if defined(WIN32) || HAVE_WINDOWS_H
-    #if defined (_MSC_VER) && !defined(_WIN64)
-        typedef struct _stat32 fluid_stat_buf_t;
-    #else
-        typedef struct _stat fluid_stat_buf_t;
-	#endif
-#else
-    /* posix, OS/2, etc. */
-    typedef struct stat fluid_stat_buf_t;
-#endif
+typedef struct stat fluid_stat_buf_t;
 
 FILE* fluid_file_open(const char* filename, const char** errMsg);
 fluid_long_long_t fluid_file_tell(FILE* f);
